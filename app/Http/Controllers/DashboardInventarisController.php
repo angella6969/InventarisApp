@@ -16,7 +16,7 @@ class DashboardInventarisController extends Controller
     {
         return view('template.inventarisasi.index',[
              "barangs" => barang::latest()
-                ->paginate(7)
+                ->paginate(20)
                 ->withQueryString()
         ]);
     }
