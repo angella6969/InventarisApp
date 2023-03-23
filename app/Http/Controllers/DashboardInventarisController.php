@@ -14,12 +14,6 @@ class DashboardInventarisController extends Controller
      */
     public function index()
     {
-        // return view('template.inventarisasi.index');
-        
-        
-        // $barangs = barangs::with(['kategori'])->all();
-        // return view('template.inventarisasi.index',compact(['barangs']));
-
         return view('template.inventarisasi.index',[
              "barangs" => barang::latest()
                 ->paginate(7)
@@ -73,7 +67,6 @@ class DashboardInventarisController extends Controller
             "barang" => barang::findOrFail($id),
             'statuses' => status::all(),
             'kategoris' => kategori::all()]);
-            // 'kategoris' => kategori::findOrFail($id)]);
     }
 
     /**
@@ -81,16 +74,22 @@ class DashboardInventarisController extends Controller
      */
     public function update(Request $request,barang $barang)
     {
-        $validatedData = $request->validate([
+        $rule=[
             'nama'=> 'required|max:255',
-            'kode_barang'=>['required','min:3','unique:barangs'],
             'kategori_id'=>['required'],
-            'status'=>['required'],
+            'status_id'=>['required'],
             'kepemilikan'=>['required'],
             'jumlah'=>['required']
-        ]);
-        barang::where('id',$barang->id)
-                ->update($validatedData);
+        ];
+        if( $request->kode_barang == $barang->kode_barang )
+        {
+            $rule['kode_barang'] = ['required','min:3','unique:barangs'];
+        }
+        $validatedData = $request->validate($rule);
+        
+        barang::where('id',$barang->id)->update($validatedData);
+        // ->update($validatedData);
+        // dd($validatedData);
         return redirect('/dashboard/inventarisasi')->with('success', 'Berhasil Merubah Data');
     }
 

@@ -6,7 +6,8 @@
   </div>
 <div class="col-lg-8">
   
-    <form method="put" action="/dashboard/inventarisasi/{{ $barang->id }}">
+    <form method="post" action="/dashboard/inventarisasi/{{ $barang->id }}">
+      @method('patch')
         @csrf
 
         <div class="mb-2">
@@ -51,8 +52,8 @@
       </div>
       <div class="mb-2">
         {{-- <label for="status" class="form-label ">Status Item</label> --}}
-        <input placeholder="status Barang" type="text" name='status' class="form-control @error('status') is-invalid @enderror" id="status" required value="{{ old('status',$barang->status) }}" >
-        @error('status')
+        <input placeholder="status Barang" type="text" name='status_id' class="form-control @error('status_id') is-invalid @enderror" id="status_id" required value="{{ old('status_id',$barang->status_id) }}" >
+        @error('status_id')
             <div class="invalit-feedback">
               {{ $message }}
             </div>
