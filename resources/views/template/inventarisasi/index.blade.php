@@ -48,7 +48,7 @@
           <form action="/dashboard/inventarisasi/{{ $barang->id }}" class="d-inline" method="POST">
             @csrf
             @method('DELETE')
-            <button class="badge bg-danger border-0" onclick="return confirm('Yakin Ingin Menghapus Data?')"><span data-feather="x-circle"></span></button>
+            <button class="badge bg-danger border-0" onclick="return confirm('Yakin Ingin Menghapus Data? {{ $barang->nama }}')"><span data-feather="x-circle"></span></button>
           </form>
         </td>
       </tr>
