@@ -10,8 +10,8 @@ class role extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
-    public function users()
-    {
-        return $this->hasMany(user::class);
-    }
+    // public function users()
+    // {
+    //     return $this->hasMany(user::class);
+    // }
 }

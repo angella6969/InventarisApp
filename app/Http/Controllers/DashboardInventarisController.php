@@ -86,7 +86,7 @@ class DashboardInventarisController extends Controller
             $rule['kode_barang'] = ['required','min:3','unique:barangs'];
         }
         $validatedData = $request->validate($rule);
-        
+        dd($validatedData);
         barang::where('id',$barang->id)->update($validatedData);
         // ->update($validatedData);
         // dd($validatedData);

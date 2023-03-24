@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\addAuth;
 use App\Http\Requests\StoreaddAuthRequest;
 use App\Http\Requests\UpdateaddAuthRequest;
+use App\Models\kategori;
 use App\Models\role;
+use App\Models\status;
+use App\Models\user;
 
 class AddAuthController extends Controller
 {
@@ -14,9 +17,9 @@ class AddAuthController extends Controller
      */
     public function index()
     {
-       return view('template.auth.registrasi.index',[
+        return view('template.auth.registrasi.index', [
             "roles" => role::latest()
-       ]);
+        ]);
     }
 
     /**
@@ -24,7 +27,12 @@ class AddAuthController extends Controller
      */
     public function create()
     {
-        //
+        return view('template.inventarisasi.create', [
+            'roles' => role::all(),
+            'users' => user::all()
+        ]);
+
+        
     }
 
     /**
