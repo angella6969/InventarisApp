@@ -8,7 +8,7 @@
 </div>
 <div class="table-responsive col-lg-11">
 
-  <a href="#" class="btn btn-primary mb-2"> Add Role </a>
+  <a href="/dashboard/addauth" class="btn btn-primary mb-2"> Add Role </a>
   <table class="table table-striped table-sm">
     <thead>
       <tr>

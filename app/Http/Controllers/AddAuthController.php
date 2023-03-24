@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\addAuth;
 use App\Http\Requests\StoreaddAuthRequest;
 use App\Http\Requests\UpdateaddAuthRequest;
+use App\Models\role;
 
 class AddAuthController extends Controller
 {
@@ -13,7 +14,9 @@ class AddAuthController extends Controller
      */
     public function index()
     {
-        //
+       return view('template.auth.registrasi.index',[
+            "roles" => role::latest()
+       ]);
     }
 
     /**

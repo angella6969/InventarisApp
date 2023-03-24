@@ -9,6 +9,7 @@ use App\Http\Controllers\RegisController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\userController;
+use App\Models\addAuth;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,8 @@ Route::resource('/dashboard/kategori',KategoriController::class)->middleware('au
 Route::resource('/dashboard/users',userController::class)->middleware('auth');
 
 Route::resource('/dashboard/role',RoleController::class)->middleware('auth');
+
+Route::resource('/dashboard/addauth',addAuth::class)->middleware('auth');
 
 Route::get('/',function(){
     return view('template.halamanUtama.index');
