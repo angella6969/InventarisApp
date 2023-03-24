@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\role>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\addAuth>
  */
-class RoleFactory extends Factory
+class AddAuthFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,7 @@ class RoleFactory extends Factory
     public function definition(): array
     {
         return [
-            'nama' => $this->faker->sentence(1)
+            //
         ];
     }
 }

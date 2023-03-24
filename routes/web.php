@@ -6,7 +6,9 @@ use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\userController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +30,9 @@ Route::resource('/dashboard/inventarisasi',DashboardInventarisController::class)
 
 Route::resource('/dashboard/kategori',KategoriController::class)->middleware('auth');
 
-Route::resource('/status',StatusController::class)->middleware('auth');
+Route::resource('/dashboard/users',userController::class)->middleware('auth');
+
+Route::resource('/dashboard/role',RoleController::class)->middleware('auth');
 
 Route::get('/',function(){
     return view('template.halamanUtama.index');

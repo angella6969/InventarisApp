@@ -20,7 +20,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/User*') ? 'active' : '' }}" href="#">
+          <a class="nav-link {{ Request::is('dashboard/User*') ? 'active' : '' }}" href="/dashboard/users">
             <span data-feather="file" class="align-text-bottom"></span>
             Users
           </a>

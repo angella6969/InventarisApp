@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\role;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
-class RegisController extends Controller
+class userController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('template.auth.registrasi.index',[
-            "roles" => role::latest()
+        return view('template.auth.index',[
+            "users" => User::latest()
+               ->paginate(20)
+               ->withQueryString()
        ]);
     }
 
@@ -32,16 +32,7 @@ class RegisController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'name'=> 'required|max:255',
-            // 'role_id'=> 'required',
-            'username'=>['required','min:3','max:200','unique:users'],
-            'email'=>['required','email:dns','unique:users'],
-            'password'=>['required','min:5','max:255']
-        ]);
-        $validatedData['password'] = Hash::make( $validatedData['password']);
-        User::create($validatedData);
-        return redirect('/login')->with('success', 'registration successfull! pleare login');
+        //
     }
 
     /**

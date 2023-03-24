@@ -49,7 +49,18 @@
             @enderror
         </div>
 
-
+        
+        {{-- <div class="mb-2">
+          <select class="form-select" name= role_id>
+          @foreach ($roles as $item)
+          @if(old('role_id') == $item->id)
+            <option value="{{ $item->id }}" selected>{{ $item->nama }}</option>
+            @else
+            <option value="{{ $item->id }}">{{ $item->nama }}</option>
+          @endif
+          @endforeach
+          </select>
+        </div> --}}
 
         <div class="form-floating mb-1">
           <input type="password" name='password' class="form-control rounded-bottom @error('password') is-invalid @enderror" id="floatingPassword" placeholder="Password" required>
