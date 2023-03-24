@@ -13,7 +13,11 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        //
+        return view('template.kategori.index',[
+            "kategoris" => kategori::latest()
+               ->paginate(20)
+               ->withQueryString()
+       ]);
     }
 
     /**

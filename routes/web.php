@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardInventarisController;
+use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisController;
@@ -24,6 +25,8 @@ Route::get('/welcome', function () {
 
 Route::get('/dashboard',[DashboardController::class, 'index' ])->middleware('auth');
 Route::resource('/dashboard/inventarisasi',DashboardInventarisController::class)->middleware('auth');
+
+Route::resource('/dashboard/kategori',KategoriController::class)->middleware('auth');
 
 Route::resource('/status',StatusController::class)->middleware('auth');
 

@@ -13,6 +13,18 @@
             Inventarisasi
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/kategori*') ? 'active' : '' }}" href="/dashboard/kategori">
+            <span data-feather="file" class="align-text-bottom"></span>
+            Kategori
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/User*') ? 'active' : '' }}" href="#">
+            <span data-feather="file" class="align-text-bottom"></span>
+            Users
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
