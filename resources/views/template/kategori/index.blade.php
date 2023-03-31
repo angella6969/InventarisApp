@@ -17,17 +17,5 @@
             </div>
             @endforeach
         </div>
-    </div>
-
-    
-    {{-- @foreach ($Categories as $category)
-   <ul>
-    <li>
-        <h2>
-            <a href="posts/categories/{{ $category->slug }}">{{ $category->name }}</a>
-        </h2>
-    </li>
-   </ul>
-    @endforeach --}}
-        
+    </div>        
  @endsection
